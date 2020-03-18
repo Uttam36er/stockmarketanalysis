@@ -1,36 +1,39 @@
-# Stock Market Analysis
-Using the power of Big Data Tools to analyze Stock Market
+Project Page
+=============
+http://nsetools.readthedocs.io
 
-Stocks selected: 
+Updates
+=========
 
-  **NASDAQ**: GOOGL,MSFT,ORCL,FB,AAPL,TSLA
-  
-  **NSE**: TCS,INFY
+To stay updated please subscribe to google group https://groups.google.com/forum/#!forum/nsetools
 
-## Data Retrieval
-###       Stock Prices
+nsetools
+========
 
-For collection of per minute Stock prices, Alphavantage API is used to retrieve prices for companies listed on NASDAQ. Read in Detail [here](https://www.cloudsigma.com/twitter-data-analysis-using-python/)
+Python library for extracting realtime data from National Stock Exchange (India)
 
-For NSE, a scraper is written in Python which scrapes the latest prices for each minute. Read in Detail [here](https://bullseyestock.wordpress.com/2018/01/21/pulling-nse-per-minute-data-using-python/).
+Introduction.
+============
 
-However the problem faced here was that at certain 1 or 2 minute interval, price won't get updated on the NSE website. For the same, data interpolation is done. 
+nsetools is a library for collecting real time data from National Stock Exchange (India). It can be used in various types of projects which requires getting live quotes for a given stock or index or build large data sets for further data analytics. You can also build cli applications which can provide you live market details at a blazing fast speeds, much faster that the browsers. The accuracy of data is only as correct as provided on www.nseindia.com.
 
-###       Twitter Data
+Main Features:
+=============
 
-Collected Twitter Data using Python with Twitter API. Read in Detail [here](https://www.cloudsigma.com/twitter-data-analysis-using-python/).
+* Getting live quotes for stocks using stock codes.
+* Return data in both json and python dict and list formats.
+* Getting quotes for all the indices traded in NSE, e.g CNX NIFTY, BANKNIFTY etc.
+* Getting list of top losers.
+* Getting list of top gainers.
+* Helper APIs to check whether a given stock code or index code is correct.
+* Getting list of all indices and stocks.
+* Cent percent unittest coverage.
 
-Also collected Twitter Data using Flume. Had to modify Flume's Twitter's package code for the same. Read in Detail [here](https://www.cloudsigma.com/realtime-twitter-data-ingestion-using-flume/)
+Dependencies
+=============
+To keep it simple and supported on most of the platforms, it uses only core python libraries, hence there are no external dependencies. It can be used out of box and absolutely not set up is required except an internet connection.
 
-## Data Collection
-Data from Twitter is stored on the Data Lake. For the purpose of this project, Cloudera Datalake has been used.
+Detailed Documenation 
+=====================
 
-## Data Preparation
-The twitter data is processed to correct the spellings of the text. It is done using a JAVA library called Language Tool.
-
-## Model - Sentiment Analysis
-On the twitter data, Stanford Core NLP library is used to tokenize, annotate sentences, part of speech tagging, syntactic analysis and sentiment analysis using Stanford's pre-trained model. With the same, sentiment value of each tweet is obtained. 
-Multiplication of Number of followers and Sentiment value for that tweet is aggregated per minute
-Read in detail [here](https://www.cloudsigma.com/sentiment-analysis-of-twitter-using-spark/)
-
-Read about our progress on [our blog](http://bullseyestock.wordpress.com) 
+For complete documenation, please refer http://nsetools.readthedocs.io
